@@ -79,7 +79,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-GDAL_LIBRARY_PATH = r'C:\Python3.11\Lib\site-packages\osgeo\gdal204.dll'
+
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
