@@ -2,15 +2,6 @@
 __pycache__/
 *.py[cod]
 
-bioinformatic/files/*
-
-bioinformatic/apps/clustal-omega-1.2.2-win64
-bioinformatic/apps/clustalw2.exe
-bioinformatic/apps/muscle3.8.425_win32.exe
-bioinformatic/apps/paml4.9j/*
-
-bioinformatic/views/trees.py
-
 .idea
 idea
 # tests and coverage
