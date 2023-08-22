@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-sa!)g0we(5+9bz$@%#-z_8rdsg*sop37rqrr=+$r7h87%6$%_+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['http://geodjango.pythonanywhere.com/']
 
 # Application definition
 
