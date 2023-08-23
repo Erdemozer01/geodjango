@@ -76,11 +76,8 @@ WSGI_APPLICATION = 'geodjango.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'geodjango$default',
-        'USER': 'geodjango',
-        'PASSWORD': 'Er880413.Dm',
-        'HOST': 'geodjango.mysql.pythonanywhere-services.com',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
