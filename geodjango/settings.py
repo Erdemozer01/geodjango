@@ -79,7 +79,8 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-GEOS_LIBRARY_PATH = os.path.join(BASE_DIR, "gdal-3.6.4")
+
+GDAL_LIBRARY_PATH = os.path.join(BASE_DIR, "gdal-3.6.4", "swig", "python", "osgeo", "gdal.py")
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
