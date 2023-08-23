@@ -10,3 +10,5 @@ DATABASES = {
         },
     }
 }
+GDAL_LIBRARY_PATH = r"/usr/local/lib/libgdal.so"
+GEOS_LIBRARY_PATH = r"/usr/lib/x86_64-linux-gnu/libgeos_c.so"
