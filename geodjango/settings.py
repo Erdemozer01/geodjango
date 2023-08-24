@@ -1,6 +1,7 @@
 import os.path
 from pathlib import Path
 import platform
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -26,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "django.contrib.gis",
     "world",
+    'leaflet.apps.LeafletConfig',
 ]
 
 MIDDLEWARE = [
@@ -127,3 +129,25 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LEAFLET_CONFIG = {
+    # conf here
+    'DEFAULT_CENTER': (40, 38),
+    'DEFAULT_ZOOM': 1,
+    'MIN_ZOOM': 3,
+
+
+    'DEFAULT_PRECISION': 6,
+    'SCALE': 'both',
+    'PLUGINS': {
+        'name-of-plugin': {
+            'css': ['relative/path/to/stylesheet.css', '/root/path/to/stylesheet.css'],
+            'js': 'http://absolute-url.example.com/path/to/script.js',
+            'auto-include': True,
+        },
+
+    },
+    'FORCE_IMAGE_PATH': True,
+    'OVERLAYS': [('Cadastral', 'http://server/a/{z}/{x}/{y}.png', {'attribution': '&copy; IGN'})],
+    'TILES': 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+}
