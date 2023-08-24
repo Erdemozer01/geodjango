@@ -80,7 +80,7 @@ if platform.system() == "Windows":
 
     GEOS_LIBRARY_PATH = os.path.join(BASE_DIR, "OSGeo4W", "bin", "geos_c.dll")
 
-elif platform.system() == "Linux":
+elif platform.system() == "Linux":  # pythonanywhere
 
     DATABASES = {
         'default': {
@@ -142,7 +142,6 @@ LEAFLET_CONFIG = {
     'DEFAULT_CENTER': (40, 38),
     'DEFAULT_ZOOM': 1,
     'MIN_ZOOM': 3,
-
 
     'DEFAULT_PRECISION': 6,
     'SCALE': 'both',
