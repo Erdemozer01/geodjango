@@ -1,4 +1,4 @@
-from django.contrib import admin
+from django.contrib.gis import admin
 from .models import WorldBorder, Zipcode
 from leaflet.admin import LeafletGeoAdmin
 
@@ -6,10 +6,10 @@ from leaflet.admin import LeafletGeoAdmin
 # Register your models here.
 
 @admin.register(WorldBorder)
-class WorldBorderAdmin(LeafletGeoAdmin):
+class WorldBorderAdmin(admin.GISModelAdmin):
     list_display = ('name', "area", "lon", "lat")
 
 
 @admin.register(Zipcode)
-class ZipcodeAdmin(LeafletGeoAdmin):
+class ZipcodeAdmin(admin.GISModelAdmin):
     list_display = ('code', "poly")
