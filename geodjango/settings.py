@@ -84,7 +84,7 @@ elif platform.system() == "Linux":
 
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.mysql',
+            'ENGINE': 'django.contrib.gis.db.backends.mysql',
             'NAME': 'geodjango$default',
             'USER': 'geodjango',
             'PASSWORD': 'Er880413',
