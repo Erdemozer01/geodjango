@@ -7,9 +7,9 @@ from leaflet.admin import LeafletGeoAdmin
 
 @admin.register(WorldBorder)
 class WorldBorderAdmin(admin.GISModelAdmin):
-    list_display = ('name', "area", "lon", "lat")
+    list_display = ['name', 'area', 'lon', 'lat']
 
 
 @admin.register(Zipcode)
 class ZipcodeAdmin(admin.GISModelAdmin):
-    list_display = ('code', "poly")
+    list_display = ['code', "poly"]
