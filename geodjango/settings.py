@@ -62,6 +62,7 @@ WSGI_APPLICATION = 'geodjango.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 if platform.system() == "Windows":
+
     DATABASES = {
         'default': {
             'ENGINE': 'django.contrib.gis.db.backends.postgis',
@@ -76,6 +77,7 @@ if platform.system() == "Windows":
     GDAL_LIBRARY_PATH = os.path.join(BASE_DIR, "OSGeo4W", "bin", "gdal305.dll")
 
     GEOS_LIBRARY_PATH = os.path.join(BASE_DIR, "OSGeo4W", "bin", "geos_c.dll")
+
 elif platform.system() == "Linux":
     DATABASES = {
         'default': {
