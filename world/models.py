@@ -32,10 +32,19 @@ class WorldBorder(models.Model):
 
 
 class Zipcode(models.Model):
-    code = models.CharField(max_length=5)
-    poly = models.PolygonField()
+    code = models.CharField(max_length=100)
+    point = models.PointField()
+
+    def __str__(self):
+        return self.code
+
+    class Meta:
+        db_table = "zipcode"
 
 
 class Elevation(models.Model):
     name = models.CharField(max_length=100)
     rast = models.RasterField()
+
+    def __str__(self):
+        return self.name
