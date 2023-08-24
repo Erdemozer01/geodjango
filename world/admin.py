@@ -1,5 +1,5 @@
 from django.contrib.gis import admin
-from .models import WorldBorder, Zipcode, Elevation
+from .models import WorldBorder, Zipcode
 from leaflet.admin import LeafletGeoAdmin
 
 
@@ -14,7 +14,3 @@ class WorldBorderAdmin(admin.GISModelAdmin):
 class ZipcodeAdmin(admin.GISModelAdmin):
     list_display = ('code', "point")
 
-
-@admin.register(Elevation)
-class ElevationAdmin(admin.GISModelAdmin):
-    list_display = ['name', "rast"]
