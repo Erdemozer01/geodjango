@@ -40,11 +40,3 @@ class Zipcode(models.Model):
 
     class Meta:
         db_table = "zipcode"
-
-
-class Elevation(models.Model):
-    name = models.CharField(max_length=100)
-    rast = models.RasterField()
-
-    def __str__(self):
-        return self.name
