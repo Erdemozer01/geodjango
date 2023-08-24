@@ -20,6 +20,8 @@ class WorldBorder(models.Model):
 
     # GeoDjango-specific: a geometry field (MultiPolygonField)
     mpoly = models.MultiPolygonField()
+    poly = models.PolygonField()
+    obj = models.GeometryField()
 
     # Returns the string representation of the model.
     def __str__(self):
@@ -27,3 +29,16 @@ class WorldBorder(models.Model):
 
     class Meta:
         db_table = "geo_model"
+
+
+from django.contrib.gis.db import models
+
+
+class Zipcode(models.Model):
+    code = models.CharField(max_length=5)
+    poly = models.PolygonField()
+
+
+class Elevation(models.Model):
+    name = models.CharField(max_length=100)
+    rast = models.RasterField()
