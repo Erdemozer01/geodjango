@@ -10,5 +10,13 @@ DATABASES = {
         },
     }
 }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.contrib.gis.db.backends.spatialite',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
 GDAL_LIBRARY_PATH = r"/usr/local/lib/libgdal.so"
 GEOS_LIBRARY_PATH = r"/usr/lib/x86_64-linux-gnu/libgeos_c.so"

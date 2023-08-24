@@ -84,16 +84,11 @@ elif platform.system() == "Linux":
 
     DATABASES = {
         'default': {
-            'ENGINE': 'django.contrib.gis.db.backends.mysql',
-            'NAME': 'geodjango$default',
-            'USER': 'geodjango',
-            'PASSWORD': 'Er880413',
-            'HOST': 'geodjango.mysql.pythonanywhere-services.com',
-            'OPTIONS': {
-                'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-            },
+            'ENGINE': 'django.contrib.gis.db.backends.spatialite',
+            'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
+
     GDAL_LIBRARY_PATH = r"/usr/local/lib/libgdal.so"
     GEOS_LIBRARY_PATH = r"/usr/lib/x86_64-linux-gnu/libgeos_c.so"
 
