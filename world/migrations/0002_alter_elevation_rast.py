@@ -2,7 +2,11 @@
 
 import django.contrib.gis.db.models.fields
 from django.db import migrations
+from django.contrib.postgres.operations import CreateExtension
 
+operations = [
+        CreateExtension('postgis_raster'),
+]
 
 class Migration(migrations.Migration):
 
