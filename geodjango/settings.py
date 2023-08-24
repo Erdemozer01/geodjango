@@ -1,6 +1,6 @@
 import os.path
 from pathlib import Path
-
+import platform
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -61,21 +61,31 @@ WSGI_APPLICATION = 'geodjango.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+if platform.system() == "Windows":
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.contrib.gis.db.backends.postgis',
+            'NAME': "postgis",
+            'USER': 'postgres',
+            'PASSWORD': "Er880413",
+            'HOST': "localhost",
+            "PORT": "5432",
+        },
+    }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': "postgis",
-        'USER': 'postgres',
-        'PASSWORD': "Er880413",
-        'HOST': "localhost",
-        "PORT": "5432",
-    },
-}
+    GDAL_LIBRARY_PATH = os.path.join(BASE_DIR, "OSGeo4W", "bin", "gdal305.dll")
 
-GDAL_LIBRARY_PATH = os.path.join(BASE_DIR, "OSGeo4W", "bin", "gdal305.dll")
+    GEOS_LIBRARY_PATH = os.path.join(BASE_DIR, "OSGeo4W", "bin", "geos_c.dll")
+elif platform.system() == "Linux":
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.contrib.gis.db.backends.spatialite',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
-GEOS_LIBRARY_PATH = os.path.join(BASE_DIR, "OSGeo4W", "bin", "geos_c.dll")
+    GDAL_LIBRARY_PATH = r"/usr/local/lib/libgdal.so"
+    GEOS_LIBRARY_PATH = r"/usr/lib/x86_64-linux-gnu/libgeos_c.so"
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
