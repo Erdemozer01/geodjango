@@ -76,7 +76,7 @@ if platform.system() == "Windows":
         },
     }
 
-    GDAL_LIBRARY_PATH = os.path.join(BASE_DIR, "OSGeo4W", "bin", "gdal305.dll")
+    GDAL_LIBRARY_PATH = os.path.join(BASE_DIR, "OSGeo4W", "bin", "gdal307.dll")
 
     GEOS_LIBRARY_PATH = os.path.join(BASE_DIR, "OSGeo4W", "bin", "geos_c.dll")
 
