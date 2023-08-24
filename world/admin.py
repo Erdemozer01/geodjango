@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import WorldBorder
+from .models import WorldBorder, Zipcode
 from leaflet.admin import LeafletGeoAdmin
 
 
@@ -8,3 +8,8 @@ from leaflet.admin import LeafletGeoAdmin
 @admin.register(WorldBorder)
 class WorldBorderAdmin(LeafletGeoAdmin):
     list_display = ('name', "area", "lon", "lat")
+
+
+@admin.register(Zipcode)
+class ZipcodeAdmin(LeafletGeoAdmin):
+    list_display = ('code', "poly")
