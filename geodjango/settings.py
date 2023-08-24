@@ -63,6 +63,7 @@ WSGI_APPLICATION = 'geodjango.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+
 if platform.system() == "Windows":
 
     DATABASES = {
