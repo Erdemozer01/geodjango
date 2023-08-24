@@ -1,7 +1,7 @@
 # byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
-
+OSGeo4W
 .idea
 idea
 # tests and coverage
