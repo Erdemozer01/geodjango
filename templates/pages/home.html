@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
 {% load bootstrap4 %}
-{% block title %} Blog | İletişim {% endblock %}
+{% load leaflet_tags %}
+
+{% block title %} Blog {% endblock %}
 
 
 {% block content %}
@@ -45,7 +47,7 @@
                                     <div class="col-12">
                                         <div class="shadow-inset p-4 mb-5 rounded">
                                             <iframe class="map rounded" id="gmap_canvas"
-                                                    src="{{ contact.map_url|safe }}"></iframe>
+                                                    src="{% leaflet_map "world" %}"></iframe>
                                         </div>
                                     </div>
                                 </div>

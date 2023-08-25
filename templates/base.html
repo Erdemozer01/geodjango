@@ -2,6 +2,7 @@
 {% load bootstrap4 %}
 {% load i18n %}
 {% load static %}
+{% load leaflet_tags %}
 {% get_current_language as LANGUAGE_CODE %}
 <html lang="{{ LANGUAGE_CODE|default:'en_us' }}">
 
@@ -50,7 +51,9 @@
           rel="stylesheet">
 
     <!-- Pixel CSS -->
-    <link type="text/css" href="{% static "blog/assets/css/neumorphism.css" %}?{% now "U" %}" rel="stylesheet">
+    <link type="text/css" href="{% static "/blog/assets/css/neumorphism.css" %}" rel="stylesheet">
+    {% leaflet_css %}
+    {% leaflet_js %}
 
     {% block stylesheets %}{% endblock %}
 
