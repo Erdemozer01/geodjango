@@ -1,8 +1,3 @@
-{% load categories %}
-{% categories_first as ilk_on %}
-{% categories_middle as orta %}
-{% categories_large as large %}
-
 {% if request.user.is_anonymous %}
     <header class="header-global">
         <nav id="navbar-main" aria-label="Primary navigation"
@@ -10,8 +5,8 @@
             <div class="container position-relative">
 
                 <a class="navbar-brand shadow-soft py-2 px-3 rounded border border-light mr-lg-4"
-                   href="{% url "blog:anasayfa" %}">
-                    <span>Blog</span>
+                   href="{% url "world:anasayfa" %}">
+                    <span>CBS</span>
                 </a>
 
                 <div class="navbar-collapse collapse" id="navbar_global">
@@ -20,9 +15,9 @@
                         <div class="row">
 
                             <div class="col-6 collapse-brand">
-                                <a href="{% url "blog:anasayfa" %}"
+                                <a href="{% url "world:anasayfa" %}"
                                    class="navbar-brand shadow-soft py-2 px-3 rounded border border-light">
-                                    Blog
+                                    CBS
                                 </a>
                             </div>
 
@@ -45,7 +40,7 @@
 
                         {% if ilk_on %}
                             <li class="nav-item dropdown mega-dropdown">
-                                <a href="{% url "blog:categories" %}" class="nav-link" data-toggle="dropdown">
+                                <a href="#" class="nav-link" data-toggle="dropdown">
                                     <span class="nav-link-inner-text">Kategoriler</span>
                                     <span class="fas fa-angle-down nav-link-arrow ml-2"></span>
                                 </a>
@@ -56,14 +51,14 @@
                                             <div class="justify-content-center bg-primary text-white">
                                                 <div class="px-6 pb-5 pt-3">
                                                     <lottie-player
-                                                            src="https://assets7.lottiefiles.com/packages/lf20_04Hqp2.json"
+                                                            src="https://lottie.host/ebd79787-3d99-4f53-b051-b869f6e41f39/5gr545AjnF.json"
                                                             background="transparent" speed="1"
                                                             style="width: 300px; height: 300px;" loop
                                                             autoplay>
                                                     </lottie-player>
                                                 </div>
                                                 <div class="z-2 pb-4 text-center">
-                                                    <a href="{% url "blog:categories" %}"
+                                                    <a href="#"
                                                        class="btn btn-primary mb-2 mb-sm-0 mr-1 text-secondary">
                                                         <span class="mr-1">
                                                             <span class="fas fa-th-large"></span>
@@ -77,11 +72,11 @@
                                         {% if ilk_on %}
                                             <div class="col pl-0">
                                                 <ul class="list-style-none">
-                                                    {% for foo in ilk_on %}
+                                                    <!--{% for foo in ilk_on %}
                                                         <li><a class="dropdown-item"
-                                                               href="{% url "blog:category" foo.slug %}">{{ foo.title }}</a>
+                                                               href="#">Kategori</a>
                                                         </li>
-                                                    {% endfor %}
+                                                    {% endfor %}-->
                                                 </ul>
                                             </div>
                                         {% endif %}
@@ -243,9 +238,9 @@
                             </a>
 
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{% url 'blog:about' %}">Hakkımızda</a></li>
-                                <li><a class="dropdown-item" href="{% url 'blog:blog_contact' %}">İletişim</a></li>
-                                <li><a class="dropdown-item" href="/page-sign-in.html">Gizlilik</a></li>
+                                <li><a class="dropdown-item" href="#">Hakkımızda</a></li>
+                                <li><a class="dropdown-item" href="#">İletişim</a></li>
+                                <li><a class="dropdown-item" href="#">Gizlilik</a></li>
                             </ul>
 
                         </li>
@@ -255,13 +250,13 @@
                 </div>
 
                 <div class="d-flex align-items-center">
-                    <a href="{% url "accounts:register" %}" target="_blank"
+                    <a href="#" target="_blank"
                        class="btn btn-primary btn-pill animate-up-3 text-secondary d-none d-md-inline-block mr-3">
                         <i class="far fa-user-circle mr-2"></i>
                         Üye Ol
                     </a>
 
-                    <a href="{% url "login" %}" class="btn btn-primary">
+                    <a href="#" class="btn btn-primary">
                         <span class="text-sm-left">Giriş Yap</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                              class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
@@ -288,7 +283,7 @@
              class="navbar navbar-main navbar-expand-lg navbar-expand-md navbar-theme-primary headroom navbar-light navbar-transparent navbar-theme-primary">
             <div class="container position-relative">
                 <a class="navbar-brand shadow-soft py-2 px-3 rounded border border-light mr-lg-4"
-                   href="{% url "blog:anasayfa" %}">
+                   href="{% url "world:anasayfa" %}">
                     <span>Blog</span>
                 </a>
 
@@ -296,7 +291,7 @@
                     <div class="navbar-collapse-header">
                         <div class="row">
                             <div class="col-6 collapse-brand">
-                                <a href="{% url "blog:anasayfa" %}"
+                                <a href="{% url 'world:anasayfa' %}"
                                    class="navbar-brand shadow-soft py-2 px-3 rounded border border-light">
                                     Blog
                                 </a>
@@ -398,7 +393,7 @@
                                             <div class="justify-content-center bg-primary text-white">
                                                 <div class="px-6 pb-5 pt-3">
                                                     <lottie-player
-                                                            src="https://assets7.lottiefiles.com/packages/lf20_04Hqp2.json"
+                                                            src="https://lottie.host/ebd79787-3d99-4f53-b051-b869f6e41f39/5gr545AjnF.json"
                                                             background="transparent" speed="1"
                                                             style="width: 300px; height: 300px;" loop
                                                             autoplay></lottie-player>
@@ -514,8 +509,8 @@
                             </a>
 
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{% url 'blog:about' %}">Hakkımızda</a></li>
-                                <li><a class="dropdown-item" href="{% url 'blog:blog_contact' %}">İletişim</a></li>
+                                <li><a class="dropdown-item" href="#">Hakkımızda</a></li>
+                                <li><a class="dropdown-item" href="#">İletişim</a></li>
                                 <li><a class="dropdown-item" href="#">Gizlilik</a></li>
                             </ul>
                         </li>
@@ -537,20 +532,20 @@
                         <div class="dropdown-menu dropdown-menu-md" aria-labelledby="dropdownMenuButton">
                             <h2 class="h6 dropdown-header">Merhaba, {{ request.user }}</h2>
                             {% if request.user.is_superuser or request.user.is_staff %}
-                                <a class="dropdown-item" href="{% url 'blog:profile' request.user request.user.pk %}">Profilim</a>
-                                <a class="dropdown-item" href="{% url "admin:index" %}">Yönetici Paneli</a>
+                                <a class="dropdown-item" href="#">Profilim</a>
+                                <a class="dropdown-item" href="#">Yönetici Paneli</a>
                                 <a class="dropdown-item"
-                                   href="{% url 'dashboard:profile_update' request.user request.user.pk %}">Profil
+                                   href="#">Profil
                                     Güncelle</a>
                                 <a class="dropdown-item"
-                                   href="{% url "dashboard:anasayfa" request.user %}">Dashboard</a>
+                                   href="#">Dashboard</a>
                             {% else %}
-                                <a class="dropdown-item" href="{% url 'blog:profile' request.user request.user.pk %}"> Profil </a>
-                                <a class="dropdown-item" href="{% url 'blog:profile_update' request.user request.user.pk %}"> Profili Güncelle</a>
+                                <a class="dropdown-item" href="#"> Profil </a>
+                                <a class="dropdown-item" href="#"> Profili Güncelle</a>
                             {% endif %}
 
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{% url "logout" %}">
+                            <a class="dropdown-item" href="#">
                                 <span class="fas fa-sign-out-alt mr-2"></span>Çıkış
                             </a>
 
