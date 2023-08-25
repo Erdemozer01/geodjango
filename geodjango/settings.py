@@ -148,8 +148,10 @@ LEAFLET_CONFIG = {
     'SCALE': 'both',
     'PLUGINS': {
         'name-of-plugin': {
-            'css': ['relative/path/to/stylesheet.css', '/root/path/to/stylesheet.css'],
-            'js': 'http://absolute-url.example.com/path/to/script.js',
+            'css': [os.path.join(BASE_DIR, "static", "leaflet", "leaflet.css"),
+                    os.path.join(BASE_DIR, "static", "leaflet", "leaflet_django.css")],
+            'js': [os.path.join(BASE_DIR, "static", "leaflet", "leaflet.js"),
+                   os.path.join(BASE_DIR, "static", "leaflet", "leaflet.extras.js"), ],
             'auto-include': True,
         },
 
