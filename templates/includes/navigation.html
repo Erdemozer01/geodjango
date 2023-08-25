@@ -284,7 +284,7 @@
             <div class="container position-relative">
                 <a class="navbar-brand shadow-soft py-2 px-3 rounded border border-light mr-lg-4"
                    href="{% url "world:anasayfa" %}">
-                    <span>Blog</span>
+                    <span>CBS</span>
                 </a>
 
                 <div class="navbar-collapse collapse" id="navbar-dark-profile">
@@ -293,7 +293,7 @@
                             <div class="col-6 collapse-brand">
                                 <a href="{% url 'world:anasayfa' %}"
                                    class="navbar-brand shadow-soft py-2 px-3 rounded border border-light">
-                                    Blog
+                                    CBS
                                 </a>
                             </div>
 
@@ -335,7 +335,7 @@
                                                             autoplay></lottie-player>
                                                 </div>
                                                 <div class="z-2 pb-4 text-center">
-                                                    <a href="{% url "blog:categories" %}"
+                                                    <a href="#"
                                                        class="btn btn-primary mb-2 mb-sm-0 mr-3 text-secondary">
                                                         <span class="mr-1"><span class="fas fa-th-large"></span></span>
                                                         Tüm Kategoriler
@@ -348,7 +348,7 @@
                                                 <ul class="list-style-none">
                                                     {% for foo in ilk_on %}
                                                         <li><a class="dropdown-item"
-                                                               href="{% url "blog:category" foo.slug|slugify %}">{{ foo.title }}</a>
+                                                               href="#">{{ foo.title }}</a>
                                                         </li>
                                                     {% endfor %}
                                                 </ul>
@@ -399,7 +399,7 @@
                                                             autoplay></lottie-player>
                                                 </div>
                                                 <div class="z-2 pb-4 text-center">
-                                                    <a href="/ui-all.html"
+                                                    <a href="#"
                                                        class="btn btn-primary mb-2 mb-sm-0 mr-3 text-secondary">
                                                         <span class="mr-1"><span class="fas fa-th-large"></span></span>
                                                         Tüm Kategoriler
@@ -413,7 +413,7 @@
                                             <ul class="list-style-none">
                                                 {% for foo in ilk_on %}
                                                     <li><a class="dropdown-item"
-                                                           href="/ui-accordions.html">{{ foo.title }}</a>
+                                                           href="#">{{ foo.title }}</a>
                                                     </li>
                                                 {% endfor %}
 
