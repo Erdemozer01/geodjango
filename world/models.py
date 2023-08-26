@@ -3,6 +3,7 @@ from django.contrib.gis.db import models
 
 # Create your models here.
 
+
 class WorldBorder(models.Model):
     # Regular Django fields corresponding to the attributes in the
     # world borders shapefile.
@@ -40,3 +41,5 @@ class Zipcode(models.Model):
 
     class Meta:
         db_table = "zipcode"
+
+

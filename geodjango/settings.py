@@ -28,7 +28,10 @@ INSTALLED_APPS = [
     "django.contrib.gis",
     "world",
     'leaflet.apps.LeafletConfig',
-    'bootstrap4'
+    'bootstrap4',
+    'django_plotly_dash.apps.DjangoPlotlyDashConfig',
+    'channels',
+    'channels_redis',
 ]
 
 MIDDLEWARE = [
@@ -39,6 +42,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_plotly_dash.middleware.BaseMiddleware',
+    'django_plotly_dash.middleware.ExternalRedirectionMiddleware',
 ]
 
 ROOT_URLCONF = 'geodjango.urls'
@@ -128,10 +133,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 STATICFILES_DIRS = [
-    BASE_DIR / "static"
+    BASE_DIR / "staticfiles"
 ]
 
 MEDIA_URL = "media/"
@@ -145,10 +150,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LEAFLET_CONFIG = {
     # conf here
-    'DEFAULT_CENTER': (40, 38),
+    'DEFAULT_CENTER': (40, 39),
     'DEFAULT_ZOOM': 1,
     'MIN_ZOOM': 3,
-
     'DEFAULT_PRECISION': 6,
     'SCALE': 'both',
     'PLUGINS': {
@@ -158,10 +162,27 @@ LEAFLET_CONFIG = {
             'js': [os.path.join(BASE_DIR, "static", "leaflet", "leaflet.js"),
                    os.path.join(BASE_DIR, "static", "leaflet", "leaflet.extras.js"), ],
             'auto-include': True,
+            'language': 'tr',
         },
 
     },
     'FORCE_IMAGE_PATH': True,
+
     'OVERLAYS': [('Cadastral', 'http://server/a/{z}/{x}/{y}.png', {'attribution': '&copy; IGN'})],
     'TILES': 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
 }
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            'hosts': [('127.0.0.1', 6379), ],
+        },
+    },
+}
+
+PLOTLY_COMPONENTS = [
+    'dpd_static_support'
+]
