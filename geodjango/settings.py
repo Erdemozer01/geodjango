@@ -29,9 +29,6 @@ INSTALLED_APPS = [
     "world",
     'leaflet.apps.LeafletConfig',
     'bootstrap4',
-    'django_plotly_dash.apps.DjangoPlotlyDashConfig',
-    'channels',
-    'channels_redis',
 ]
 
 MIDDLEWARE = [
@@ -42,8 +39,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django_plotly_dash.middleware.BaseMiddleware',
-    'django_plotly_dash.middleware.ExternalRedirectionMiddleware',
 ]
 
 ROOT_URLCONF = 'geodjango.urls'
@@ -172,17 +167,3 @@ LEAFLET_CONFIG = {
     'TILES': 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
 }
 
-X_FRAME_OPTIONS = 'SAMEORIGIN'
-
-CHANNEL_LAYERS = {
-    'default': {
-        'BACKEND': 'channels_redis.core.RedisChannelLayer',
-        'CONFIG': {
-            'hosts': [('127.0.0.1', 6379), ],
-        },
-    },
-}
-
-PLOTLY_COMPONENTS = [
-    'dpd_static_support'
-]
