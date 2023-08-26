@@ -29,8 +29,9 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
+
+            </div>
         </section>
     </main>
 {% endblock %}
@@ -38,47 +39,49 @@
 {% block javascripts %}
     <script>
 
-        var geodjango_id_mpoly = {};
+        const geodjango_id_mpoly = {};
         geodjango_id_mpoly.fieldid = 'id_mpoly';
         geodjango_id_mpoly.modifiable = true;
         geodjango_id_mpoly.geom_type = 'MultiPolygon';
         geodjango_id_mpoly.srid = 4326;
 
 
-        L.drawLocal.draw.toolbar.actions.title = "Cancel drawing";
-        L.drawLocal.draw.toolbar.actions.text = "Cancel";
-        L.drawLocal.draw.toolbar.undo.title = "Delete last point drawn";
-        L.drawLocal.draw.toolbar.undo.text = "Delete last point";
-        L.drawLocal.draw.toolbar.buttons.polyline = "Draw a polyline";
-        L.drawLocal.draw.toolbar.buttons.polygon = "Draw a polygon";
-        L.drawLocal.draw.toolbar.buttons.rectangle = "Draw a rectangle";
-        L.drawLocal.draw.toolbar.buttons.circle = "Draw a circle";
-        L.drawLocal.draw.toolbar.buttons.marker = "Draw a marker";
-        L.drawLocal.draw.handlers.circle.tooltip.start = "Click and drag to draw circle.";
-        L.drawLocal.draw.handlers.marker.tooltip.start = "Click map to place marker.";
-        L.drawLocal.draw.handlers.polygon.tooltip.start = "Click to start drawing shape.";
-        L.drawLocal.draw.handlers.polygon.tooltip.cont = "Click to continue drawing shape.";
+        L.drawLocal.draw.toolbar.actions.title = "Çizimi iptal et";
+        L.drawLocal.draw.toolbar.actions.text = "İptal";
+        L.drawLocal.draw.toolbar.undo.title = "Son noktayı sil";
+        L.drawLocal.draw.toolbar.finish.text = "Bitir";
+        L.drawLocal.draw.toolbar.undo.text = "Son noktayı sil";
+        L.drawLocal.draw.toolbar.buttons.polyline = "Poli-line çiz";
+        L.drawLocal.draw.toolbar.buttons.polygon = "Poligon çiz";
+        L.drawLocal.draw.toolbar.buttons.rectangle = "Dörtgen çiz";
+        L.drawLocal.draw.toolbar.buttons.circle = "Çember çiz";
+        L.drawLocal.draw.toolbar.buttons.marker = "Yer işaretle";
+        L.drawLocal.draw.handlers.circle.tooltip.start = "Çember konum";
+        L.drawLocal.draw.handlers.marker.tooltip.start = "Yer işaretle";
+        L.drawLocal.draw.handlers.polygon.tooltip.start = "Çizime başla";
+        L.drawLocal.draw.handlers.polygon.tooltip.cont = "Çizime devam et";
         L.drawLocal.draw.handlers.polygon.tooltip.end = "Click first point to close this shape.";
         L.drawLocal.draw.handlers.polyline.error = "<strong>Error:</strong> shape edges cannot cross!";
-        L.drawLocal.draw.handlers.polyline.tooltip.start = "Click to start drawing line.";
-        L.drawLocal.draw.handlers.polyline.tooltip.cont = "Click to continue drawing line.";
-        L.drawLocal.draw.handlers.polyline.tooltip.end = "Click last point to finish line.";
-        L.drawLocal.draw.handlers.rectangle.tooltip.start = "Click and drag to draw rectangle.";
+        L.drawLocal.draw.handlers.polyline.tooltip.start = "Çizime başla";
+        L.drawLocal.draw.handlers.polyline.tooltip.cont = "İşaretle ve çizime devam et";
+        L.drawLocal.draw.handlers.polyline.tooltip.end = "Son noktayı işaretle";
+        L.drawLocal.draw.handlers.rectangle.tooltip.start = "Tıkla ve dörtgen çiz.";
         L.drawLocal.draw.handlers.simpleshape.tooltip.end = "Release mouse to finish drawing.";
 
-        L.drawLocal.edit.toolbar.actions.save.title = "Save changes.";
+        L.drawLocal.edit.toolbar.actions.save.title = "Değişiklikleri kaydet";
         L.drawLocal.edit.toolbar.actions.save.text = "Kaydet";
-        L.drawLocal.edit.toolbar.actions.cancel.title = "Cancel editing, discards all changes.";
-        L.drawLocal.edit.toolbar.actions.cancel.text = "Cancel";
-        L.drawLocal.edit.toolbar.buttons.edit = "Edit layers";
-        L.drawLocal.edit.toolbar.buttons.editDisabled = "No layers to edit.";
-        L.drawLocal.edit.toolbar.buttons.remove = "Delete layers";
-        L.drawLocal.edit.toolbar.buttons.removeDisabled = "No layers to delete.";
+        L.drawLocal.edit.toolbar.actions.assign.title = "Bitir"
+        L.drawLocal.edit.toolbar.actions.cancel.title = "Düzenlemeyi iptal et";
+        L.drawLocal.edit.toolbar.actions.cancel.text = "İptal";
+        L.drawLocal.edit.toolbar.buttons.edit = "Düzenle";
+        L.drawLocal.edit.toolbar.buttons.editDisabled = "Düzenlenecek katman yok.";
+        L.drawLocal.edit.toolbar.buttons.remove = "Katmanı sil";
+        L.drawLocal.edit.toolbar.buttons.removeDisabled = "Silinecek katman yok";
         L.drawLocal.edit.handlers.edit.tooltip.text = "Drag handles, or marker to edit feature.";
-        L.drawLocal.edit.handlers.edit.tooltip.subtext = "Click cancel to undo changes.";
-        L.drawLocal.edit.handlers.remove.tooltip.text = "Click on a feature to remove";
+        L.drawLocal.edit.handlers.edit.tooltip.subtext = "Değişikleri geri al.";
+        L.drawLocal.edit.handlers.remove.tooltip.text = "Özellikleri kaldır";
 
-        L.Control.ResetView.TITLE = "Reset view";
+        L.Control.ResetView.TITLE = "Sıfırla";
         L.Control.ResetView.ICON = "url(/static/leaflet/images/reset-view.png)";
 
 
@@ -87,7 +90,7 @@
             geodjango_id_mpoly.precision = options.djoptions.precision;
             (new L.GeometryField(geodjango_id_mpoly)).addTo(map);
 
-        };
+        }
 
 
     </script>
