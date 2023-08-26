@@ -2,7 +2,7 @@
 __pycache__/
 *.py[cod]
 OSGeo4W
-
+staticfiles
 .idea
 idea
 # tests and coverage
